@@ -1,4 +1,5 @@
 import os
+import sqlite3
 from flask import Flask, g, request, make_response, jsonify, send_from_directory
 from flask_cors import CORS
 import json
@@ -109,4 +110,4 @@ def download_avatar(name):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
