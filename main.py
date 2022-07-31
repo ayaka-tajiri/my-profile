@@ -62,11 +62,9 @@ def put_my_profile(uid):
 
     cur.execute('SELECT * FROM my_profile WHERE uid = ?', [uid])
     if len(cur.fetchall()) == 0:
-        print('insert')
         cur.execute("INSERT INTO my_profile(uid, name, postalcode, address, filename) values(?,?,?,?,?)",
                     [uid, name, postalcode, address, filename])
     else:
-        print('update')
         cur.execute("UPDATE my_profile SET name = ?, postalcode = ?, address = ?, filename = ? WHERE uid = ?",
                     [name, postalcode, address, filename, uid])
 
