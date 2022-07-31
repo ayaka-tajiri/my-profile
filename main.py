@@ -55,7 +55,6 @@ def put_my_profile(uid):
     con = get_db()
     cur = con.cursor()
 
-    # uid = request.json["uid"]
     name = request.json["name"]
     postalcode = request.json["postalcode"]
     address = request.json["address"]

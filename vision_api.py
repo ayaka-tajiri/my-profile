@@ -1,12 +1,10 @@
 import os
-
-from google.cloud import vision
 import io
+from google.cloud import vision
 from PIL import Image
 
 
 def detect_crop_hints(path):
-    """Detects crop hints in an image."""
     client = vision.ImageAnnotatorClient()
 
     with io.open(path, 'rb') as image_file:
